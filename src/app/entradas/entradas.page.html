@@ -1,0 +1,23 @@
+
+  <ion-header>
+      <ion-toolbar>
+        <ion-icon name="arrow-back-outline" slot="start" (click)="return()" style="margin-left: 14px;"></ion-icon>
+        <ion-title>Entradas</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-item *ngFor="let entrada of entradas" (click)="navigateToDetail(entrada.id)" >
+            <ion-thumbnail slot="end">
+                <img src="{{entrada.imageURL}}">
+            </ion-thumbnail>
+            <ion-label>
+                <h3 style="font-size: 16px;">{{entrada.name}}</h3>
+                <p style="font-size: 15px;">${{entrada.price.toFixed(2)}}</p>
+                
+            </ion-label>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+  

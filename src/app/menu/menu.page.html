@@ -1,0 +1,39 @@
+
+
+<ion-content>
+  <ion-list>
+    <ion-img src="https://img.freepik.com/vector-gratis/logotipo-restaurante_23-2148558726.jpg?size=626&ext=jpg"></ion-img>
+      <ion-item>
+          <ion-thumbnail slot="end">
+           <ion-icon name="chevron-forward-outline" style="margin-top: 20px; margin-left: 28px;" (click)="navigateToEntradas()"></ion-icon>
+          </ion-thumbnail>
+          <ion-label>
+              <h3 style="font-size: 16px;">Entradas</h3>
+              </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="end">
+          <ion-icon name="chevron-forward-outline" style="margin-top: 20px; margin-left: 28px;" (click)='navigateToPostres()'></ion-icon>
+        </ion-thumbnail>
+        <ion-label>
+            <h3 style="font-size: 16px;" >Postres</h3>
+            </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="end">
+        <ion-icon name="chevron-forward-outline" style="margin-top: 20px; margin-left: 28px;" (click)="navigateToPLatosFuertes()"></ion-icon>
+      </ion-thumbnail>
+      <ion-label>
+          <h3 style="font-size: 16px;">Platos Fuertes</h3>
+          </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-thumbnail slot="end">
+      <ion-icon name="chevron-forward-outline" style="margin-top: 20px; margin-left: 28px;" (click)='navigateToBebidas()'></ion-icon>
+    </ion-thumbnail>
+    <ion-label>
+        <h3 style="font-size: 16px;">Bebidas</h3>
+        </ion-label>
+</ion-item>
+  </ion-list>
+</ion-content>

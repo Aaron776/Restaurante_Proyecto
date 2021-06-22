@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" slot="start" (click)="return()" style="margin-left: 14px;"></ion-icon>
+    <ion-title>Platos Fuertes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item *ngFor="let platos of platos " (click)="navigateToDetail(platos.id)" >
+        <ion-thumbnail slot="end">
+            <img src="{{platos.imageURL}}">
+        </ion-thumbnail>
+        <ion-label>
+            <h3 style="font-size: 16px;">{{platos.name}}</h3>
+            <p style="font-size: 15px;">${{platos.price.toFixed(2)}}</p>
+            
+        </ion-label>
+    </ion-item>
+</ion-list>
+</ion-content>
