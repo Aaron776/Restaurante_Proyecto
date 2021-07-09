@@ -19,7 +19,7 @@ export class BebidasPage implements OnInit {
     this.synch();
 }
 synch(): void {
-  this.bebidas = this.itemService.getBebidas();
+  this.bebidas = this.itemService.getBebida();
   console.log(this.bebidas);
 }
   return(): void {

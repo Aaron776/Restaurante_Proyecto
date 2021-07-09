@@ -19,7 +19,7 @@ export class PostresPage implements OnInit {
     this.synch();
   }
   synch(): void {
-    this.postres = this.itemService.getPostres();
+    this.postres = this.itemService.getPostre();
     console.log(this.postres);
   }
   

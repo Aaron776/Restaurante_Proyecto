@@ -22,7 +22,7 @@ export class EntradasPage implements OnInit {
   this.synch();
 }
 synch(): void {
-  this.entradas = this.itemService.getEntradas();
+  this.entradas = this.itemService.getEntrada();
   console.log(this.entradas);
 }
 return(): void {

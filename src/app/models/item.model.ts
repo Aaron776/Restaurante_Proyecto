@@ -4,5 +4,5 @@ export interface ItemModel{
     price?:number;
     imageURL?:string;
     description?:string;
-    categoria?:string;
+    category?:string;
 }

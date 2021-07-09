@@ -17,7 +17,7 @@ export class PlatosFuertesPage implements OnInit {
     this.synch();
   }
   synch(): void {
-    this.platos = this.itemService.getPlatosFuertes();
+    this.platos = this.itemService.getPlatosFuerte();
     console.log(this.platos);
   }
   return(): void {
