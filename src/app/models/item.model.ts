@@ -1,8 +1,8 @@
 export interface ItemModel{
-    id?:string;
+    _id?:string;
     name?:string;
     price?:number;
-    imageURL?:string;
+    imageUrl?:string;
     description?:string;
     category?:string;
 }

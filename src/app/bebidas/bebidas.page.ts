@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {NavController} from '@ionic/angular';
 import {ItemModel} from 'src/app/models/item.model';
-import { ItemService } from '../api/item.service';
+import { ItemService } from '../service/item.service';
+import {NavController} from '@ionic/angular';
 
 
 
@@ -19,15 +19,19 @@ export class BebidasPage implements OnInit {
     this.synch();
 }
 synch(): void {
-  this.bebidas = this.itemService.getBebida();
-  console.log(this.bebidas);
+  this.itemService.getByCategory('bebida').subscribe(
+    response => {
+        this.bebidas = response;
+        console.log(response);
 }
-  return(): void {
-    this.navCtrl.back();
-  }
-  navigateToDetail(id: string): void {
-    this.rout.navigate(['/item-detail/' + id]);
-  }
+);
+}
+return(): void {
+  this.navCtrl.back();
+}
+navigateToDetail(item: ItemModel): void {
+  this.rout.navigate(['/item-detail/' + item._id]);
+}
   
   
 

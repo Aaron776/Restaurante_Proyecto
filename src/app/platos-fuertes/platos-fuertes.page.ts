@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemModel} from 'src/app/models/item.model';
 import {Router} from '@angular/router';
+import {ItemService} from '../service/item.service';
 import {NavController} from '@ionic/angular';
-import {ItemService} from '../api/item.service';
 
 @Component({
   selector: 'app-platos-fuertes',
@@ -17,15 +17,21 @@ export class PlatosFuertesPage implements OnInit {
     this.synch();
   }
   synch(): void {
-    this.platos = this.itemService.getPlatosFuerte();
-    console.log(this.platos);
+    this.itemService.getByCategory('plato fuerte').subscribe(
+      response => {
+          this.platos = response;
+          console.log(response);
   }
-  return(): void {
-    this.navCtrl.back();
+  );
   }
-  navigateToDetail(id: string): void {
-    this.rout.navigate(['/item-detail/' + id]);
+  
+  navigateToDetail(item: ItemModel): void {
+    this.rout.navigate(['/item-detail/' + item._id]);
   }
+
+return(): void {
+  this.navCtrl.back();
+}
   
 
 }

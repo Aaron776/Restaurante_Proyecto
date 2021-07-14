@@ -7,9 +7,9 @@
 
 <ion-content fullscreen>
   <ion-list>
-    <ion-item *ngFor="let postres of postres" (click)="navigateToDetail(postres.id)" >
+    <ion-item *ngFor="let postres of postres" (click)="navigateToDetail(postres)" >
         <ion-thumbnail slot="end">
-            <img src="{{postres.imageURL}}">
+            <img src="{{postres.imageUrl}}">
         </ion-thumbnail>
         <ion-label>
             <h3 style="font-size: 16px;">{{postres.name}}</h3>

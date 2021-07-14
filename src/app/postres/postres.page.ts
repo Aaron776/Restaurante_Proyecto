@@ -1,8 +1,8 @@
 import {Component, OnInit } from '@angular/core';
 import {ItemModel} from 'src/app/models/item.model';
 import {Router} from '@angular/router';
+import {ItemService} from '../service/item.service';
 import {NavController} from '@ionic/angular';
-import {ItemService} from '../api/item.service';
 
 @Component({
   selector: 'app-postres',
@@ -19,17 +19,22 @@ export class PostresPage implements OnInit {
     this.synch();
   }
   synch(): void {
-    this.postres = this.itemService.getPostre();
-    console.log(this.postres);
+    this.itemService.getByCategory('postre').subscribe(
+      response => {
+          this.postres = response;
+          console.log(response);
+  }
+  );
   }
   
+  navigateToDetail(item: ItemModel): void {
+    this.rout.navigate(['/item-detail/' + item._id]);
+  }
   return(): void {
     this.navCtrl.back();
   }
-  navigateToDetail(id: string): void {
-    this.rout.navigate(['/item-detail/' + id]);
-  }
+}
   
 
-}
+
 

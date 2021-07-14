@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {ItemModel} from 'src/app/models/item.model';
 import {Router} from '@angular/router';
+import { ItemService } from '../service/item.service';
 import {NavController} from '@ionic/angular';
-import { ItemService } from '../api/item.service';
 
 
 @Component({
@@ -21,15 +21,22 @@ export class EntradasPage implements OnInit {
  ngOnInit() {
   this.synch();
 }
-synch(): void {
-  this.entradas = this.itemService.getEntrada();
-  console.log(this.entradas);
-}
+
 return(): void {
   this.navCtrl.back();
 }
-navigateToDetail(id: string): void {
-  this.rout.navigate(['/item-detail/' + id]);
+synch(): void {
+  this.itemService.getByCategory('entrada').subscribe(
+    response => {
+        this.entradas = response;
+        console.log('-->'+response);
+}
+);
+}
+
+navigateToDetail(item: ItemModel): void {
+   
+  this.rout.navigate(['/item-detail/' + item._id]);
 }
 
 
