@@ -8,6 +8,7 @@ import {ShoppingCartService} from 'src/app/service/shopping-cart.service';
 
 
 
+
 @Component({
   selector: 'app-item-detail',
   templateUrl: './item-detail.page.html',

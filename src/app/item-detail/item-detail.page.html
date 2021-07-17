@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon name="arrow-back-outline" slot="start" (click)="return()" style="margin-left: 14px;"></ion-icon>
+    <ion-icon name="arrow-back-outline" slot="start" (click)="return()"  style="margin-left: 14px;"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -15,9 +15,9 @@
       {{item.description}}
       <ion-item>
         <ion-label><b>Observación:</b></ion-label>
-        <ion-input  type="text" [(ngModel)]="shoppingItem.observation"></ion-input>
+        <ion-input  type="text" [(ngModel)]="shoppingItem.observation" required></ion-input>
       </ion-item>
-      <ion-button shape="round" color="primary" expand="full" (click)="agregar()" style="margin-top: 26px;" >Agregar
+      <ion-button shape="round" color="primary" expand="full" (click)="agregar()"  style="margin-top: 26px;" >Agregar
       </ion-button>
     </ion-card-content>
   </ion-card>
